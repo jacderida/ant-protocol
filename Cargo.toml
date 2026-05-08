@@ -70,3 +70,6 @@ expect_used = "deny"
 panic = "deny"
 # Allow non-const functions — the constructors may gain runtime behaviour.
 missing_const_for_fn = "allow"
+
+[patch.crates-io]
+saorsa-core = { git = "https://github.com/jacderida/saorsa-core.git", rev = "4e47a943ff7329856c35b8246ff1bb8cb6bcc126" }  # branch: chore-address_set_logging
