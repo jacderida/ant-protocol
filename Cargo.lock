@@ -4366,7 +4366,7 @@ dependencies = [
 [[package]]
 name = "saorsa-core"
 version = "0.25.0-rc.1"
-source = "git+https://github.com/saorsa-labs/saorsa-core?branch=rc-2026.6.2#088c3552bf7257ee10b5a670cd4990d1c0e7b8af"
+source = "git+https://github.com/jacderida/saorsa-core?branch=v2-463#b5ef83bc2e99ab8da52dabd1580e7c3d427fd8af"
 dependencies = [
  "anyhow",
  "async-trait",
