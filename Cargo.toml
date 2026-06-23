@@ -70,3 +70,7 @@ expect_used = "deny"
 panic = "deny"
 # Allow non-const functions — the constructors may gain runtime behaviour.
 missing_const_for_fn = "allow"
+
+[patch.crates-io]
+saorsa-transport = { git = "https://github.com/jacderida/saorsa-transport.git", rev = "18fda355e76fb9f145b42b644187601440ab4073" }  # branch: experiment/relay-drop-instrumentation
+saorsa-core = { git = "https://github.com/jacderida/saorsa-core.git", rev = "87f5b397ccd68446d797c544db8ce23be8350e37" }  # branch: experiment/relay-drop-instrumentation
