@@ -70,3 +70,9 @@ expect_used = "deny"
 panic = "deny"
 # Allow non-const functions — the constructors may gain runtime behaviour.
 missing_const_for_fn = "allow"
+
+# Testnet build: ADR-011 authenticated leased relay-port reservations.
+# saorsa-transport is pulled in transitively via saorsa-core; pin both forks.
+[patch.crates-io]
+saorsa-transport = { git = "https://github.com/jacderida/saorsa-transport.git", rev = "9da15c80bae6eb2e52d20ff4f3e0e2e89fe4eb83" }  # branch: feat-consistent_relay_port
+saorsa-core = { git = "https://github.com/jacderida/saorsa-core.git", rev = "e940bf596bb33ca221457f7117c37964cf6fd73b" }  # branch: feat-consistent_relay_port
