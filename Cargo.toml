@@ -21,7 +21,7 @@ path = "src/lib.rs"
 # these through `ant_protocol::{transport, pqc, evm}` re-exports so the
 # version is pinned in exactly one place. Changing these versions is a
 # breaking change for both downstream crates.
-saorsa-core = "0.26.1-rc.1" # testnet: matches the rc-2026.6.3 fork; revert when 0.26.x publishes
+saorsa-core = "0.26.0"
 saorsa-pqc = "0.5"
 evmlib = "0.8.1"
 
@@ -72,8 +72,9 @@ panic = "deny"
 missing_const_for_fn = "allow"
 
 # Testnet build: ADR-011 authenticated leased relay-port reservations.
-# saorsa-transport is pulled in transitively via saorsa-core, whose rc branch
-# already pins it to saorsa-labs/saorsa-transport rc-2026.6.3 (which contains the
-# merged relay PR #99), so only the saorsa-core fork needs patching here.
+# saorsa-transport is pulled transitively via saorsa-core; pin both forks. The
+# saorsa-core fork is the testnet branch (0.26.0 + crates.io transport req) so
+# published deps resolve; transport is redirected to the tested relay fork below.
 [patch.crates-io]
-saorsa-core = { git = "https://github.com/jacderida/saorsa-core.git", rev = "523740269911185fba22afeddc5877869d50a97c" }  # branch: feat-consistent_relay_port
+saorsa-transport = { git = "https://github.com/jacderida/saorsa-transport.git", rev = "acfd003442ec6d7a2ba8ae0933c37d2f9cbff90f" }  # branch: feat-consistent_relay_port
+saorsa-core = { git = "https://github.com/jacderida/saorsa-core.git", rev = "923bf7855ecbf5f0723b1355fa3702254e8bf7f0" }  # branch: testnet-2026.6.3
